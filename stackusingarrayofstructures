@@ -1,0 +1,68 @@
+#include<bits/stdc++.h>
+using namespace std;
+//define structure for stack 
+struct mystack
+{
+    int *arr;
+    int capacity;
+    int top;
+    //in structure we can have constructor 
+    mystack(int c)
+    {
+        arr=new int[c];
+        capacity=c;
+        top=-1;
+    }
+    //push the data into stack
+    void push(int val)
+    {
+        if(top==capacity-1)
+        {
+            cout<<"Stack is filled"<<endl;
+            return;
+        }
+        top++;
+        arr[top]=val;
+    }
+    int pop()
+    {
+        if(top==-1)
+        {
+            return INT_MIN;
+        }
+        int ele=arr[top];
+        top--;
+        return ele;
+    }
+    int peek()
+    {
+        return arr[top];
+    }
+    int size()
+    {
+        return top+1;
+    }
+    bool empty()
+    {
+        //return top == -1;
+        if(top == -1)
+        {
+            return true;
+        }
+        return false;
+    }
+};
+int main()
+{
+    //create stack variable
+    mystack st(5);//as it takes pointers
+    st.push(10);
+    st.push(20);
+    cout<<st.peek()<<"\n";
+    cout<<st.pop()<<"\n";
+    st.push(30);
+    st.push(40);
+    cout<<st.size()<<"\n";
+    cout<<st.empty()<<"\n";
+}
+
