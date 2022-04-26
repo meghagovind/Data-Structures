@@ -1,3 +1,11 @@
+/*
+inserting data -> push
+deleteing data -> pop//deletes last element
+view peek -> top
+size -> size
+*/
+//stack uses last in first out order.
+
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
